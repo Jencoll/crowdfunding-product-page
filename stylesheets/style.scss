@@ -1,0 +1,26 @@
+@import '_variables.scss';
+
+@import '_mixins.scss';
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+    width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+// hero section
+@import '_hero.scss';
+
+// product section
+@import '_product.scss';
+
+// footer
+@import '_footer.scss';

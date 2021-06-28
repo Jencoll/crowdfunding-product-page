@@ -1,0 +1,86 @@
+.product {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    background-color: white;
+    height: 1000px;
+    border-radius: 15px;
+
+    .product-logo {
+        position: absolute;
+        top: -3%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .product-heading-txt {
+        position: relative;
+        margin: 4rem auto 2rem;
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            padding: 1rem;
+        }
+    }
+
+    .product-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem;
+
+        .btn {
+            @include btn;
+        }
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 6rem 0 2rem;
+
+        .stats-block {
+            min-width: 200px;
+            padding: 0 3rem;
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+
+        .stats-block:not(.last) {
+            border-right: 1px solid lightgray;
+        }
+    }
+
+    progress[value]{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        height: 15px;
+        width: 100%;
+        margin: 0 3rem;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    progress::-webkit-progress-bar {
+        background-color: #f1f1f1;
+    }
+
+    progress::-webkit-progress-value{
+        background: $darkcyan;
+    }
+
+    .about {
+        margin: 6rem 3rem;
+
+    }
+}

@@ -14,7 +14,7 @@ body {
     max-width: 1440px;
     height: 100vh;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.2;
     background: #333;
 }
 
@@ -22,18 +22,22 @@ main {
     width: 100%;
     height: 100vh;
     position: relative;
-    background-color: white;
+    background-color:#f1f1f1;
 }
 
 p {
     color: gray;
+    line-height: 2;
 }
 
 // hero section
 @import '_hero.scss';
 
-// product section
-@import '_product.scss';
+// product heading section
+@import '_product-heading.scss';
+
+// product stats section
+@import '_product-stats.scss';
 
 // footer
 @import '_footer.scss';

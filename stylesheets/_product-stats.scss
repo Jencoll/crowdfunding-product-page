@@ -1,45 +1,6 @@
 .product {
-    position: absolute;
-    width: 50%;
-    left: 50%;
-    bottom: 5%;
-    transform: translateX(-50%);
-    background-color: white;
-    height: 1000px;
-    border-radius: 15px;
 
-    .product-logo {
-        position: absolute;
-        top: -3%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .product-heading-txt {
-        position: relative;
-        margin: 4rem auto 2rem;
-
-        h1 {
-            font-size: 28px;
-            text-align: center;
-        }
-
-        p {
-            text-align: center;
-            padding: 1rem;
-        }
-    }
-
-    .product-buttons {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 3rem;
-
-        .btn {
-            @include btn;
-        }
-    }
-
+    // stats container
     .stats-container {
         display: flex;
         justify-content: space-between;
@@ -59,7 +20,7 @@
         }
     }
 
-    progress[value]{
+    progress[value] {
         -webkit-appearance: none;
         -moz-appearance: none;
         -ms-appearance: none;
@@ -75,12 +36,19 @@
         background-color: #f1f1f1;
     }
 
-    progress::-webkit-progress-value{
+    progress::-webkit-progress-value {
         background: $darkcyan;
     }
 
+    // about container
     .about {
         margin: 6rem 3rem;
 
+        p {
+            padding-top: 2rem;
+        }
+
     }
+
+    // product cards container
 }

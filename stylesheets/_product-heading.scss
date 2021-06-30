@@ -1,11 +1,9 @@
 // Product heading section
 .product-heading {
     @include centerX;
-    width: 50%;
+    @include container;
     top: -15%;
     height: 30%;
-    background: white;
-    border-radius: 10px;
 
     .product-heading-container {
         position: relative;
@@ -19,11 +17,6 @@
 
         .product-heading-txt {
             position: relative;
-
-            h1 {
-                font-size: 28px;
-                text-align: center;
-            }
 
             p {
                 text-align: center;
@@ -62,7 +55,7 @@
                     height: 100%;
                 }
             }
-            .bookmark:hover img {
+            .bookmark-desktop:hover img {
                 opacity: 0.5;
             }
         }

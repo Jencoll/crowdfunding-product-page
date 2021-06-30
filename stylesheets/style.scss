@@ -25,10 +25,20 @@ main {
     background-color:#f1f1f1;
 }
 
+h1 {
+    font-size: 28px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+}
+
 p {
     color: gray;
     line-height: 2;
 }
+
 
 // hero section
 @import '_hero.scss';

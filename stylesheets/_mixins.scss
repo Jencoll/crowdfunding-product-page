@@ -32,3 +32,9 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+@mixin container {
+    width: 50%;
+    background: white;
+    border-radius: 10px;
+}

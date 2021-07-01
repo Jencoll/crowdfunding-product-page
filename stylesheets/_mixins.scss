@@ -34,7 +34,13 @@
 }
 
 @mixin container {
-    width: 50%;
+    width: 100%;
+    margin: 0 auto;
     background: white;
     border-radius: 10px;
+}
+
+@mixin innerContainer {
+    height: 100%;
+    padding: 3rem;
 }

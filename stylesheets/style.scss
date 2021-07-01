@@ -8,20 +8,24 @@
     padding: 0;
 }
 
+html {
+    background: #333;
+}
+
 body {
     font-size: 16px;
     font-family: 'Commissioner', sans-serif;
     max-width: 1440px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
     line-height: 1.2;
-    background: #333;
+    background: #f1f1f1;
 }
 
 main {
-    width: 100%;
-    height: 100vh;
     position: relative;
+    max-width: 720px;
+    margin: 0 auto;
     background-color:#f1f1f1;
 }
 
@@ -34,9 +38,29 @@ h2 {
     font-size: 32px;
 }
 
+h3 {
+    font-size: 21px;
+    padding-bottom: 1.5rem;
+}
+
+h4 {
+    font-size: 19px;
+}
+
+h5 {
+    color: $moderatecyan;
+    font-size: 17px;
+}
+
 p {
     color: gray;
     line-height: 2;
+}
+
+@media screen and (max-width: 500px) {
+    .inner-container {
+        padding: 3rem 1rem;
+    }
 }
 
 
@@ -49,5 +73,5 @@ p {
 // product stats section
 @import '_product-stats.scss';
 
-// footer
-@import '_footer.scss';
+// about section
+@import '_about.scss';

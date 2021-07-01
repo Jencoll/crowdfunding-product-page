@@ -1,8 +1,8 @@
 // Product heading section
 .product-heading {
-    @include centerX;
+    position: relative;
     @include container;
-    top: -15%;
+    top: -50px;
     height: 30%;
 
     .product-heading-container {
@@ -75,22 +75,9 @@
         }
 }
 
-@media screen and (max-width: 1100px) {
-    .product-heading {
-        width: 60%;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .product-heading {
-        width: 70%;
-    }
-}
-
 @media screen and (max-width: 800px) {
     .product-heading {
         width: 90%;
-        top: -7%;
     }
 }
 
@@ -120,21 +107,11 @@
     }
 }
 
-@media screen and (max-width: 501px) {
-    .product-heading {
-
-        .product-heading-container {
-            padding: 2.5rem 0 0 0;
-        }
-    }
-}
-
 @media screen and (max-width: 395px) {
     .product-heading {
-        height: 35%;
 
         .product-heading-container {
-            padding: 2.5rem 0 0 0;
+            padding: 2rem 0;
         }
     }
 }

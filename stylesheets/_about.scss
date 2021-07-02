@@ -21,11 +21,10 @@
                     justify-content: space-between;
                     padding-bottom: 1rem;
 
-                    h4:last-of-type {
-                        color: gray;
+                    .inactive-pledge {
+                        color: $darkgray;
                     }
                 }
-
 
                 .counts-wrap {
                     display: flex;
@@ -44,6 +43,10 @@
 
                     .btn {
                         @include btn;
+                    }
+
+                    .reward-btn:hover {
+                        background: $darkcyan;
                     }
                 }
 

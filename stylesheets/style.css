@@ -126,7 +126,7 @@ header .burger {
   }
   header nav .menu.active-menu .menu-items {
     width: 100%;
-    padding: 30px;
+    padding: 1.3rem;
     margin: 0;
     text-align: center;
   }
@@ -143,6 +143,7 @@ header .burger {
     width: 40px;
     height: 40px;
     margin-left: auto;
+    z-index: 200;
   }
   header nav .burger .line {
     position: absolute;
@@ -224,6 +225,7 @@ header .burger {
 }
 .product-heading .product-heading-container .product-buttons .btn {
   width: 200px;
+  height: 56px;
   padding: 1rem 2rem;
   border-radius: 999px;
   background: #3cb4ac;
@@ -231,28 +233,41 @@ header .burger {
   text-align: center;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
 }
 .product-heading .product-heading-container .product-buttons .back-project:hover {
   background: #147b74;
 }
-.product-heading .product-heading-container .product-buttons .bookmark-mobile {
-  display: none;
-}
-.product-heading .product-heading-container .product-buttons .bookmark-desktop {
+.product-heading .product-heading-container .product-buttons .bookmark-btn {
   background: #f1f1f1;
   color: #8e8e8e;
   position: relative;
-  padding-left: 3.5rem;
 }
-.product-heading .product-heading-container .product-buttons .bookmark-desktop img {
+.product-heading .product-heading-container .product-buttons .bookmark-btn svg {
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
+  top: 0;
 }
-.product-heading .product-heading-container .product-buttons .bookmark-desktop:hover img {
+.product-heading .product-heading-container .product-buttons .bookmark-btn .bookmark-text {
+  text-decoration: none;
+  color: #7a7a7a;
+  font-weight: 700;
+  margin-left: 2rem;
+}
+.product-heading .product-heading-container .product-buttons .bookmark-btn:hover svg {
   opacity: 0.5;
+}
+
+.bookmark-btn.bookmarked svg circle {
+  fill: #147b74;
+}
+
+.bookmark-btn.bookmarked svg path {
+  fill: white;
+}
+
+.bookmark-btn.bookmarked .bookmark-text {
+  color: #147b74 !important;
 }
 
 @media screen and (max-width: 1244px) {
@@ -273,9 +288,13 @@ header .burger {
     font-size: 22px;
   }
   .product-heading .product-heading-container .product-buttons {
-    justify-content: center;
+    justify-content: space-between;
   }
-  .product-heading .product-heading-container .product-buttons .bookmark-desktop {
+  .product-heading .product-heading-container .product-buttons .bookmark-btn {
+    width: 56px;
+    padding: 0;
+  }
+  .product-heading .product-heading-container .product-buttons .bookmark-btn .bookmark-text {
     display: none;
   }
   .product-heading .product-heading-container .product-buttons .bookmark-mobile {
@@ -286,6 +305,9 @@ header .burger {
 @media screen and (max-width: 395px) {
   .product-heading .product-heading-container {
     padding: 2rem 0;
+  }
+  .product-heading .product-heading-container .product-buttons {
+    justify-content: space-evenly;
   }
 }
 .stats {
@@ -391,8 +413,8 @@ header .burger {
   justify-content: space-between;
   padding-bottom: 1rem;
 }
-.about .inner-container .products .card .headings h4:last-of-type {
-  color: gray;
+.about .inner-container .products .card .headings .inactive-pledge {
+  color: #7a7a7a;
 }
 .about .inner-container .products .card .counts-wrap {
   display: flex;
@@ -410,6 +432,7 @@ header .burger {
 }
 .about .inner-container .products .card .counts-wrap .btn {
   width: 200px;
+  height: 56px;
   padding: 1rem 2rem;
   border-radius: 999px;
   background: #3cb4ac;
@@ -417,6 +440,10 @@ header .burger {
   text-align: center;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
+}
+.about .inner-container .products .card .counts-wrap .reward-btn:hover {
+  background: #147b74;
 }
 .about .inner-container .products .card .no-stock p span {
   color: gray;
@@ -437,6 +464,22 @@ header .burger {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.active-overlay {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

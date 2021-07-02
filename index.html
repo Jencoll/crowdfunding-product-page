@@ -43,8 +43,16 @@
 
         <div class="product-buttons">
           <a href="#" class="btn back-project">Back this project</a>
-          <a href="#" class="btn bookmark-desktop"><img src="./images/icon-bookmark.svg">Bookmark</a>
-          <a href="#" class="bookmark-mobile"><img src="./images/icon-bookmark.svg" alt="bookmark"></a>
+
+          <a class="btn bookmark-btn">
+            <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#2F2F2F" cx="28" cy="28" r="28"></circle>
+                <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"></path>
+              </g>
+            </svg>
+            <span class="bookmark-text">Bookmark</span>
+          </a>
         </div>
       </div>
     </section>
@@ -89,7 +97,7 @@
             <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
             <div class="counts-wrap">
               <p><span>101</span> left</p>
-              <a href="#" class="btn rewardBtn">Select Reward</a>
+              <a href="#" class="btn reward-btn">Select Reward</a>
             </div>
           </div>
           <div class="card">
@@ -100,12 +108,12 @@
             <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
             <div class="counts-wrap">
               <p><span>64</span> left</p>
-              <a href="#" class="btn rewardBtn">Select Reward</a>
+              <a href="#" class="btn reward-btn">Select Reward</a>
             </div>
           </div>
           <div class="card">
             <div class="headings">
-              <h4>Mahogany Special Edition</h4>
+              <h4 class="inactive-pledge">Mahogany Special Edition</h4>
               <h5>Pledge $200 or more</h5>
             </div>
             <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
@@ -117,10 +125,12 @@
         </div>
       </div>
     </section>
-
-
-
   </main>
+
+  <div class="overlay"></div>
+  <div class="backproject-modal">
+
+  </div>
 
   <script src="script.js"></script>
 </body>

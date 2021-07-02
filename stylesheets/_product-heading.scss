@@ -37,32 +37,45 @@
                 background: $darkcyan;
             }
 
-            .bookmark-mobile {
-                display: none;
-            }
-
-            .bookmark-desktop {
+            .bookmark-btn {
                 background: #f1f1f1;
                 color: #8e8e8e;
                 position: relative;
-                padding-left: 3.5rem;
 
-                img {
+                svg {
                     position: absolute;
                     left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    height: 100%;
+                    top: 0;
+                }
+
+                .bookmark-text {
+                    text-decoration: none;
+                    color: $darkgray;
+                    font-weight: 700;
+                    margin-left: 2rem;
                 }
             }
-            .bookmark-desktop:hover img {
+
+            .bookmark-btn:hover svg {
                 opacity: 0.5;
             }
         }
     }
 }
 
+// active states
+.bookmark-btn.bookmarked svg circle {
+    fill: $darkcyan;
+}
+.bookmark-btn.bookmarked svg path {
+    fill: white;
+}
+.bookmark-btn.bookmarked .bookmark-text {
+    color: $darkcyan!important;
+}
 
+
+// mobile version
 @media screen and (max-width: 1244px) {
         .product-heading {
             .product-heading-container {
@@ -91,10 +104,16 @@
             }
 
             .product-buttons {
-                justify-content: center;
+                justify-content: space-between;
 
-                .bookmark-desktop {
-                    display: none;
+                .bookmark-btn {
+                    width: 56px;
+                    padding: 0;
+
+                        .bookmark-text {
+                            display: none;
+                        }
+
                 }
 
                 .bookmark-mobile {
@@ -112,6 +131,10 @@
 
         .product-heading-container {
             padding: 2rem 0;
+
+            .product-buttons {
+                justify-content: space-evenly;
+            }
         }
     }
 }

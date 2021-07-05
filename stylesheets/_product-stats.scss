@@ -3,6 +3,7 @@
     @include container;
     position: relative;
     height: 25%;
+    top: -30px;
 
     .inner-container {
         @include innerContainer;

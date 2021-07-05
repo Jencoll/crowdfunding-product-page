@@ -1,6 +1,6 @@
 .about {
     @include container;
-    margin-top: 3rem;
+    margin-top: 1.2rem;
 
     .inner-container {
         @include innerContainer;
@@ -12,9 +12,7 @@
         .products {
 
             .card {
-                border: 2px solid #f1f1f1;
-                margin-bottom: 1rem;
-                padding: 2rem 1.5rem;
+                @include card;
 
                 .headings {
                     display: flex;
@@ -34,10 +32,7 @@
                     p {
                         padding-bottom: 0;
                         span {
-                            font-weight: 700;
-                            color: black;
-                            font-size: 28px;
-                            margin-right: 0.3rem;
+                            @include productLeftSpan;
                         }
                     }
 

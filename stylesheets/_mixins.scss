@@ -46,3 +46,17 @@
     height: 100%;
     padding: 3rem;
 }
+
+@mixin card {
+    border: 2px solid #f1f1f1;
+    margin-bottom: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+}
+
+@mixin productLeftSpan {
+    font-weight: 700;
+    color: black;
+    font-size: 28px;
+    margin-right: 0.3rem;
+}

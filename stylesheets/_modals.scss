@@ -1,3 +1,4 @@
+// Overlay mobile menu active
 .overlay {
     position: fixed;
     width: 100%;
@@ -13,4 +14,88 @@
 .active-overlay {
     visibility: visible;
     opacity: 1;
+}
+
+// Back project modal
+.backproject-modal {
+    @include centerX;
+    @include container;
+    max-width: 720px;
+    top: 22%;
+
+    .backproject-header {
+        @include innerContainer;
+
+        .close-modal {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            cursor: pointer;
+
+            img {
+                opacity: 0.4;
+            }
+        }
+
+        .close-modal:hover img {
+            opacity: 1;
+        }
+
+        p {
+            margin-top: 1rem;
+        }
+    }
+
+    .products {
+        @include innerContainer;
+        padding: 0.5rem 3rem;
+
+        .card {
+            @include card;
+
+            .headings {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                .round {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: 2px solid #f1f1f1;
+                    margin-right: 20px;
+                }
+
+                h5 {
+                    margin-left: 1rem;
+                    color: $moderatecyan;
+                }
+
+                p {
+                    margin-left: auto;
+
+                    span {
+                        @include productLeftSpan;
+                    }
+                }
+            }
+
+            .headings:hover h4 {
+                color: $moderatecyan;
+            }
+
+            .headings:hover .round {
+                border: 1px solid $moderatecyan;
+            }
+
+            .zero-stock {
+                opacity: 0.4;
+            }
+
+            p {
+                padding-left: 50px;
+            }
+        }
+    }
+
 }

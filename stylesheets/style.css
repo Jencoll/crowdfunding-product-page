@@ -59,16 +59,16 @@ p {
   }
 }
 header {
-  background: bottom/cover no-repeat url(../images/image-hero-desktop.jpg);
+  background: center/cover no-repeat url(../images/image-hero-desktop.jpg);
   width: 100%;
-  height: 20rem;
+  height: 25rem;
   display: flex;
   padding: 1.5rem;
 }
 header nav {
-  width: 100%;
+  width: 80%;
   height: 50px;
-  margin: 0 auto;
+  margin: 1rem auto;
   display: flex;
   align-items: center;
   position: relative;
@@ -108,6 +108,9 @@ header .burger {
 @media screen and (max-width: 800px) {
   header {
     background: center/cover no-repeat url(../images/image-hero-mobile.jpg);
+  }
+  header nav {
+    width: 90%;
   }
   header nav .menu {
     display: none;
@@ -187,6 +190,9 @@ header .burger {
   }
 }
 @media screen and (max-width: 450px) {
+  header nav {
+    width: 100%;
+  }
   header nav .menu.active-menu .menu-items {
     text-align: left;
   }
@@ -197,7 +203,7 @@ header .burger {
   margin: 0 auto;
   background: white;
   border-radius: 10px;
-  top: -50px;
+  top: -80px;
   height: 30%;
 }
 .product-heading .product-heading-container {
@@ -317,6 +323,7 @@ header .burger {
   border-radius: 10px;
   position: relative;
   height: 25%;
+  top: -30px;
 }
 .stats .inner-container {
   height: 100%;
@@ -394,7 +401,7 @@ header .burger {
   margin: 0 auto;
   background: white;
   border-radius: 10px;
-  margin-top: 3rem;
+  margin-top: 1.2rem;
 }
 .about .inner-container {
   height: 100%;
@@ -407,6 +414,7 @@ header .burger {
   border: 2px solid #f1f1f1;
   margin-bottom: 1rem;
   padding: 2rem 1.5rem;
+  border-radius: 10px;
 }
 .about .inner-container .products .card .headings {
   display: flex;
@@ -480,6 +488,85 @@ header .burger {
 .active-overlay {
   visibility: visible;
   opacity: 1;
+}
+
+.backproject-modal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  max-width: 720px;
+  top: 22%;
+}
+.backproject-modal .backproject-header {
+  height: 100%;
+  padding: 3rem;
+}
+.backproject-modal .backproject-header .close-modal {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.backproject-modal .backproject-header .close-modal img {
+  opacity: 0.4;
+}
+.backproject-modal .backproject-header .close-modal:hover img {
+  opacity: 1;
+}
+.backproject-modal .backproject-header p {
+  margin-top: 1rem;
+}
+.backproject-modal .products {
+  height: 100%;
+  padding: 3rem;
+  padding: 0.5rem 3rem;
+}
+.backproject-modal .products .card {
+  border: 2px solid #f1f1f1;
+  margin-bottom: 1rem;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+}
+.backproject-modal .products .card .headings {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.backproject-modal .products .card .headings .round {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #f1f1f1;
+  margin-right: 20px;
+}
+.backproject-modal .products .card .headings h5 {
+  margin-left: 1rem;
+  color: #3cb4ac;
+}
+.backproject-modal .products .card .headings p {
+  margin-left: auto;
+}
+.backproject-modal .products .card .headings p span {
+  font-weight: 700;
+  color: black;
+  font-size: 28px;
+  margin-right: 0.3rem;
+}
+.backproject-modal .products .card .headings:hover h4 {
+  color: #3cb4ac;
+}
+.backproject-modal .products .card .headings:hover .round {
+  border: 1px solid #3cb4ac;
+}
+.backproject-modal .products .card .zero-stock {
+  opacity: 0.4;
+}
+.backproject-modal .products .card p {
+  padding-left: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

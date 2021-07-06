@@ -33,6 +33,7 @@
                         padding-bottom: 0;
                         span {
                             @include productLeftSpan;
+
                         }
                     }
 
@@ -68,9 +69,16 @@
 
 @media screen and (max-width: 550px) {
     .about {
+        width: 100%;
         .inner-container {
+            padding: 0;
+
             .products {
+                padding: 0.5rem 1rem;
+
                 .card {
+                    padding: 1.5rem;
+
                     .headings, .counts-wrap {
                         display: flex;
                         flex-direction: column;

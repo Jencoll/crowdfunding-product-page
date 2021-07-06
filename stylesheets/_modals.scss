@@ -18,6 +18,10 @@
 
 // Back project modal
 .backproject-modal {
+    display: none;
+}
+.active-backproj-modal {
+    display: block;
     @include centerX;
     @include container;
     max-width: 720px;
@@ -52,6 +56,7 @@
 
         .card {
             @include card;
+            position: relative;
 
             .headings {
                 display: flex;
@@ -59,25 +64,26 @@
                 cursor: pointer;
 
                 .round {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    position: relative;
                     width: 30px;
                     height: 30px;
-                    border-radius: 50%;
                     border: 2px solid #f1f1f1;
+                    border-radius: 50%;
                     margin-right: 20px;
                 }
 
-                h5 {
-                    margin-left: 1rem;
-                    color: $moderatecyan;
-                }
+                .titles {
+                    display: flex;
 
-                p {
-                    margin-left: auto;
-
-                    span {
-                        @include productLeftSpan;
+                    h5 {
+                        margin-left: 1rem;
+                        color: $moderatecyan;
                     }
                 }
+
             }
 
             .headings:hover h4 {
@@ -93,7 +99,78 @@
             }
 
             p {
-                padding-left: 50px;
+                padding: 1rem 0 0 50px;
+            }
+
+            .nb-left {
+                position: absolute;
+                top: 1.8rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+
+                span {
+                    color: gray;
+                    font-size: 1rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+// mobile version
+@media screen and (max-width: 800px) {
+    .backproject-modal .products .card {
+
+        p {
+            padding: 1rem 0;
+        }
+
+        .nb-left {
+            position: relative;
+            display: block;
+            padding: 1rem 0;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .backproject-modal {
+        .backproject-header {
+            padding: 2rem 1.5rem;
+            .backproject-title {
+                h2 {
+                    font-size: 28px;
+                }
+
+                .close-modal {
+                    top: 2.5rem;
+                }
+            }
+        }
+
+        .products {
+            padding: 0.5rem 1rem;
+
+            .card {
+                padding: 1.5rem;
+
+                .headings {
+                    .titles {
+                        flex-direction: column;
+
+                        h5 {
+                            margin-left: 0;
+                            padding: 0.5rem 0;
+                        }
+                    }
+                }
+
+                .nb-left {
+                    padding: 0;
+                }
             }
         }
     }

@@ -467,6 +467,18 @@ header .burger {
   }
 }
 @media screen and (max-width: 550px) {
+  .about {
+    width: 100%;
+  }
+  .about .inner-container {
+    padding: 0;
+  }
+  .about .inner-container .products {
+    padding: 0.5rem 1rem;
+  }
+  .about .inner-container .products .card {
+    padding: 1.5rem;
+  }
   .about .inner-container .products .card .headings, .about .inner-container .products .card .counts-wrap {
     display: flex;
     flex-direction: column;
@@ -491,6 +503,11 @@ header .burger {
 }
 
 .backproject-modal {
+  display: none;
+}
+
+.active-backproj-modal {
+  display: block;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -501,72 +518,122 @@ header .burger {
   max-width: 720px;
   top: 22%;
 }
-.backproject-modal .backproject-header {
+.active-backproj-modal .backproject-header {
   height: 100%;
   padding: 3rem;
 }
-.backproject-modal .backproject-header .close-modal {
+.active-backproj-modal .backproject-header .close-modal {
   position: absolute;
   top: 2rem;
   right: 2rem;
   cursor: pointer;
 }
-.backproject-modal .backproject-header .close-modal img {
+.active-backproj-modal .backproject-header .close-modal img {
   opacity: 0.4;
 }
-.backproject-modal .backproject-header .close-modal:hover img {
+.active-backproj-modal .backproject-header .close-modal:hover img {
   opacity: 1;
 }
-.backproject-modal .backproject-header p {
+.active-backproj-modal .backproject-header p {
   margin-top: 1rem;
 }
-.backproject-modal .products {
+.active-backproj-modal .products {
   height: 100%;
   padding: 3rem;
   padding: 0.5rem 3rem;
 }
-.backproject-modal .products .card {
+.active-backproj-modal .products .card {
   border: 2px solid #f1f1f1;
   margin-bottom: 1rem;
   padding: 2rem 1.5rem;
   border-radius: 10px;
+  position: relative;
 }
-.backproject-modal .products .card .headings {
+.active-backproj-modal .products .card .headings {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.backproject-modal .products .card .headings .round {
+.active-backproj-modal .products .card .headings .round {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   border: 2px solid #f1f1f1;
+  border-radius: 50%;
   margin-right: 20px;
 }
-.backproject-modal .products .card .headings h5 {
+.active-backproj-modal .products .card .headings .titles {
+  display: flex;
+}
+.active-backproj-modal .products .card .headings .titles h5 {
   margin-left: 1rem;
   color: #3cb4ac;
 }
-.backproject-modal .products .card .headings p {
-  margin-left: auto;
-}
-.backproject-modal .products .card .headings p span {
-  font-weight: 700;
-  color: black;
-  font-size: 28px;
-  margin-right: 0.3rem;
-}
-.backproject-modal .products .card .headings:hover h4 {
+.active-backproj-modal .products .card .headings:hover h4 {
   color: #3cb4ac;
 }
-.backproject-modal .products .card .headings:hover .round {
+.active-backproj-modal .products .card .headings:hover .round {
   border: 1px solid #3cb4ac;
 }
-.backproject-modal .products .card .zero-stock {
+.active-backproj-modal .products .card .zero-stock {
   opacity: 0.4;
 }
-.backproject-modal .products .card p {
-  padding-left: 50px;
+.active-backproj-modal .products .card p {
+  padding: 1rem 0 0 50px;
+}
+.active-backproj-modal .products .card .nb-left {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+}
+.active-backproj-modal .products .card .nb-left span {
+  color: gray;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .backproject-modal .products .card p {
+    padding: 1rem 0;
+  }
+  .backproject-modal .products .card .nb-left {
+    position: relative;
+    display: block;
+    padding: 1rem 0;
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .backproject-modal .backproject-header {
+    padding: 2rem 1.5rem;
+  }
+  .backproject-modal .backproject-header .backproject-title h2 {
+    font-size: 28px;
+  }
+  .backproject-modal .backproject-header .backproject-title .close-modal {
+    top: 2.5rem;
+  }
+  .backproject-modal .products {
+    padding: 0.5rem 1rem;
+  }
+  .backproject-modal .products .card {
+    padding: 1.5rem;
+  }
+  .backproject-modal .products .card .headings .titles {
+    flex-direction: column;
+  }
+  .backproject-modal .products .card .headings .titles h5 {
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+  .backproject-modal .products .card .nb-left {
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

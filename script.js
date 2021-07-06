@@ -6,6 +6,7 @@ const bookmarkedBtn = document.querySelector('.bookmark-btn');
 const bookmarkTxt = document.querySelector('.bookmark-text');
 const backProjectBtn = document.querySelector('.back-project');
 const backProjectModal = document.querySelector('.backproject-modal');
+const btnCloseModal = document.querySelector('.close-modal');
 
 // burger and menu animation
 btnBurger.addEventListener('click', () => {
@@ -33,10 +34,15 @@ bookmarkedBtn.addEventListener('mouseup', () => {
 
 // back this project modal
 backProjectBtn.addEventListener('click', () => {
-    overlay.classList.toggle('active-overlay');
-    backProjectModal.classList.toggle('active-modal');
-
+    overlay.classList.add('active-overlay');
+    backProjectModal.classList.add('active-backproj-modal');
 })
+
 overlay.addEventListener('click', () => {
     overlay.classList.remove('active-overlay');
+})
+
+btnCloseModal.addEventListener('click', () => {
+    overlay.classList.remove('active-overlay');
+    backProjectModal.classList.remove('active-backproj-modal');
 })

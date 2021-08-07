@@ -11,7 +11,7 @@
 
         .products {
 
-            .card {
+            .card-wrap {
                 @include card;
 
                 .headings {
@@ -70,14 +70,13 @@
 @media screen and (max-width: 550px) {
     .about {
         width: 100%;
+        padding: 2rem 1rem;
         .inner-container {
             padding: 0;
 
             .products {
-                padding: 0.5rem 1rem;
-
-                .card {
-                    padding: 1.5rem;
+                .card-wrap {
+                    padding: 1rem;
 
                     .headings, .counts-wrap {
                         display: flex;

@@ -353,7 +353,6 @@ header .burger {
 .stats .inner-container progress[value] {
   -webkit-appearance: none;
   -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
   height: 15px;
   width: 100%;
@@ -410,35 +409,35 @@ header .burger {
 .about .inner-container p {
   padding-bottom: 1.5rem;
 }
-.about .inner-container .products .card {
+.about .inner-container .products .card-wrap {
   border: 2px solid #f1f1f1;
   margin-bottom: 1rem;
   padding: 2rem 1.5rem;
   border-radius: 10px;
 }
-.about .inner-container .products .card .headings {
+.about .inner-container .products .card-wrap .headings {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
 }
-.about .inner-container .products .card .headings .inactive-pledge {
+.about .inner-container .products .card-wrap .headings .inactive-pledge {
   color: #7a7a7a;
 }
-.about .inner-container .products .card .counts-wrap {
+.about .inner-container .products .card-wrap .counts-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.about .inner-container .products .card .counts-wrap p {
+.about .inner-container .products .card-wrap .counts-wrap p {
   padding-bottom: 0;
 }
-.about .inner-container .products .card .counts-wrap p span {
+.about .inner-container .products .card-wrap .counts-wrap p span {
   font-weight: 700;
   color: black;
   font-size: 28px;
   margin-right: 0.3rem;
 }
-.about .inner-container .products .card .counts-wrap .btn {
+.about .inner-container .products .card-wrap .counts-wrap .btn {
   width: 200px;
   height: 56px;
   padding: 1rem 2rem;
@@ -450,13 +449,13 @@ header .burger {
   font-weight: 500;
   cursor: pointer;
 }
-.about .inner-container .products .card .counts-wrap .reward-btn:hover {
+.about .inner-container .products .card-wrap .counts-wrap .reward-btn:hover {
   background: #147b74;
 }
-.about .inner-container .products .card .no-stock p span {
+.about .inner-container .products .card-wrap .no-stock p span {
   color: gray;
 }
-.about .inner-container .products .card .no-stock .out-of-stock {
+.about .inner-container .products .card-wrap .no-stock .out-of-stock {
   background: gray;
 }
 
@@ -469,17 +468,15 @@ header .burger {
 @media screen and (max-width: 550px) {
   .about {
     width: 100%;
+    padding: 2rem 1rem;
   }
   .about .inner-container {
     padding: 0;
   }
-  .about .inner-container .products {
-    padding: 0.5rem 1rem;
+  .about .inner-container .products .card-wrap {
+    padding: 1rem;
   }
-  .about .inner-container .products .card {
-    padding: 1.5rem;
-  }
-  .about .inner-container .products .card .headings, .about .inner-container .products .card .counts-wrap {
+  .about .inner-container .products .card-wrap .headings, .about .inner-container .products .card-wrap .counts-wrap {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -542,65 +539,136 @@ header .burger {
   padding: 3rem;
   padding: 0.5rem 3rem;
 }
-.active-backproj-modal .products .card {
+.active-backproj-modal .products .card-wrap {
   border: 2px solid #f1f1f1;
   margin-bottom: 1rem;
   padding: 2rem 1.5rem;
   border-radius: 10px;
-  position: relative;
 }
-.active-backproj-modal .products .card .headings {
+.active-backproj-modal .products .card-wrap .card {
+  position: relative;
+  padding: 2rem 1.5rem;
+}
+.active-backproj-modal .products .card-wrap .card .headings {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.active-backproj-modal .products .card .headings .round {
+.active-backproj-modal .products .card-wrap .card .headings .round {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   position: relative;
+  display: inline-block;
   width: 30px;
   height: 30px;
-  border: 2px solid #f1f1f1;
   border-radius: 50%;
   margin-right: 20px;
+  padding: 5px;
+  border: 2px solid #f1f1f1;
+  background-clip: content-box;
+  background-color: white;
 }
-.active-backproj-modal .products .card .headings .titles {
+.active-backproj-modal .products .card-wrap .card .headings input[type=radio]:checked {
+  background-color: #3cb4ac;
+}
+.active-backproj-modal .products .card-wrap .card .headings .titles {
   display: flex;
 }
-.active-backproj-modal .products .card .headings .titles h5 {
+.active-backproj-modal .products .card-wrap .card .headings .titles h5 {
   margin-left: 1rem;
   color: #3cb4ac;
 }
-.active-backproj-modal .products .card .headings:hover h4 {
+.active-backproj-modal .products .card-wrap .card .headings:hover h4 {
   color: #3cb4ac;
 }
-.active-backproj-modal .products .card .headings:hover .round {
+.active-backproj-modal .products .card-wrap .card .headings:hover .round {
   border: 1px solid #3cb4ac;
 }
-.active-backproj-modal .products .card .zero-stock {
+.active-backproj-modal .products .card-wrap .card .zero-stock {
   opacity: 0.4;
 }
-.active-backproj-modal .products .card p {
+.active-backproj-modal .products .card-wrap .card p {
   padding: 1rem 0 0 50px;
 }
-.active-backproj-modal .products .card .nb-left {
+.active-backproj-modal .products .card-wrap .card .nb-left {
   position: absolute;
   top: 1.8rem;
   right: 1.5rem;
   font-size: 1.5rem;
 }
-.active-backproj-modal .products .card .nb-left span {
+.active-backproj-modal .products .card-wrap .card .nb-left span {
   color: gray;
   font-size: 1rem;
   margin-left: 0.5rem;
 }
+.active-backproj-modal .products .card-wrap .buy-pledge {
+  display: none;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active {
+  border-top: 1px solid #f1f1f1;
+  margin-top: 1rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns {
+  display: flex;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .price {
+  width: 200px;
+  height: 56px;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: #3cb4ac;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  background-color: white;
+  border: 2px solid #f1f1f1;
+  color: lightgray;
+  width: 130px;
+  margin-right: 1rem;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .price .amount-input {
+  margin-left: 0.4rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .price .amount-input:focus, .active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .price .amount-input:active {
+  border: none;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .btn {
+  width: 200px;
+  height: 56px;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: #3cb4ac;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  width: 130px;
+}
+.active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .btn:hover {
+  background: #147b74;
+}
+.active-backproj-modal .products .card-wrap-active {
+  border: 2px solid #3cb4ac;
+}
 
 @media screen and (max-width: 800px) {
-  .backproject-modal .products .card p {
+  .backproject-modal .products .card-wrap .card p {
     padding: 1rem 0;
   }
-  .backproject-modal .products .card .nb-left {
+  .backproject-modal .products .card-wrap .card .nb-left {
     position: relative;
     display: block;
     padding: 1rem 0;
@@ -619,21 +687,103 @@ header .burger {
     top: 2.5rem;
   }
   .backproject-modal .products {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
   }
-  .backproject-modal .products .card {
-    padding: 1.5rem;
+  .backproject-modal .products .card-wrap {
+    padding: 1.5rem 1rem;
   }
-  .backproject-modal .products .card .headings .titles {
+  .backproject-modal .products .card-wrap .card {
+    padding: 0;
+  }
+  .backproject-modal .products .card-wrap .card .headings .titles {
     flex-direction: column;
   }
-  .backproject-modal .products .card .headings .titles h5 {
+  .backproject-modal .products .card-wrap .card .headings .titles h5 {
     margin-left: 0;
     padding: 0.5rem 0;
   }
-  .backproject-modal .products .card .nb-left {
+  .backproject-modal .products .card-wrap .card .nb-left {
     padding: 0;
   }
+  .backproject-modal .products .card-wrap .buy-pledge {
+    flex-direction: column;
+  }
+  .backproject-modal .products .card-wrap .buy-pledge .buy-btns {
+    margin-top: 1rem;
+  }
+}
+.thanks-modal {
+  display: none;
 }
 
-/*# sourceMappingURL=style.css.map */
+.thanks-modal-active {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 550px;
+  padding: 3rem;
+  border-radius: 10px;
+}
+.thanks-modal-active figure {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 2.5rem;
+}
+.thanks-modal-active figure img {
+  width: 100%;
+}
+.thanks-modal-active h3 {
+  font-size: 26px;
+}
+.thanks-modal-active p {
+  text-align: center;
+}
+.thanks-modal-active .btn {
+  width: 200px;
+  height: 56px;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: #3cb4ac;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  width: 110px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 1.5rem;
+}
+.thanks-modal-active .btn:hover {
+  background: #147b74;
+}
+
+@media screen and (max-width: 600px) {
+  .thanks-modal-active {
+    width: 90%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+  }
+  .thanks-modal-active figure {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.2rem;
+  }
+  .thanks-modal-active h3 {
+    text-align: center;
+    font-size: 22px;
+  }
+}/*# sourceMappingURL=style.css.map */

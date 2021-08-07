@@ -34,6 +34,12 @@
     left: 50%;
     transform: translateX(-50%);
 }
+@mixin center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
 @mixin container {
     width: 100%;

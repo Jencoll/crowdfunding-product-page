@@ -30,11 +30,6 @@ Users should be able to:
 - See the number of total backers increment by one after confirming a pledge
 - Toggle whether or not the product is bookmarked
 
-### Screenshot
-
-(./preview_CrowdfundingProductPage.png)
-
-
 ### Links
 
 - Solution URL: (https://github.com/Jencoll/crowdfunding-product-page)
@@ -69,5 +64,5 @@ Also, in the next projects, I think it would be good to build with mobile-first 
 
 ## Author
 
-- Website - (https://www.jennyfercollin.com)
+- Website - [Jennyfer Collin](https://www.jennyfercollin.com)
 - Frontend Mentor - [@Jencoll](https://www.frontendmentor.io/profile/Jencoll)

@@ -12,9 +12,10 @@ const inputs = Array.from(document.querySelectorAll('.round'));
 const buyPledge = document.querySelector('.buy-pledge');
 const buyPledges = Array.from(document.querySelectorAll('.buy-pledge'));
 const cardWraps = document.querySelectorAll('.card-wrap');
-const continueBtns = document.querySelectorAll('.continue');
+const continueBtns = Array.from(document.querySelectorAll('.continue'));
 const thanksModal = document.querySelector('.thanks-modal');
 const gotItBtns = document.querySelectorAll('.got-it');
+const amountInputs = document.querySelectorAll('.amount-input');
 
 // burger and menu animation
 btnBurger.addEventListener('click', () => {
@@ -101,8 +102,28 @@ rewardBtns.forEach(rewardBtn => {
 // thanks modal activated
 continueBtns.forEach(continueBtn => {
     continueBtn.addEventListener('click', () => {
-        backProjectModal.classList.remove('active-backproj-modal');
-        thanksModal.classList.add('thanks-modal-active');
+        // Max values for amount inputs (validation)
+        let continueBtnIndex = continueBtns.indexOf(continueBtn);
+        if(continueBtnIndex > 0) {
+            let amountInputIndex = continueBtnIndex - 1;
+            let amountInput = amountInputs[amountInputIndex];
+            let minAmount = Number(amountInput.getAttribute('min'));
+            let maxAmount = Number(amountInput.getAttribute('max'));
+            let valueAmount = Number(amountInput.value);
+            let valid = false;
+            if(valueAmount > maxAmount){
+                amountInput.parentElement.style.borderColor = "red";
+                amountInput.value = maxAmount;
+            } else if(valueAmount < minAmount) {
+                amountInput.parentElement.style.borderColor = "red";
+                amountInput.value = minAmount;
+            } else {
+                valid = true;
+                backProjectModal.classList.remove('active-backproj-modal');
+                thanksModal.classList.add('thanks-modal-active');
+            }
+        }
+
     })
 })
 

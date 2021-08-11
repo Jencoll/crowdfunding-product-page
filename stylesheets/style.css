@@ -627,6 +627,7 @@ header .burger {
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+  padding: 1rem 1.5rem;
   display: flex;
   background-color: white;
   border: 2px solid #f1f1f1;
@@ -640,9 +641,10 @@ header .burger {
   font-weight: bold;
   font-size: 1rem;
   border: none;
+  width: 60px;
 }
 .active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .price .amount-input:focus, .active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .price .amount-input:active {
-  border: none;
+  outline: none;
 }
 .active-backproj-modal .products .card-wrap .buy-pledge-active .buy-btns .btn {
   width: 200px;

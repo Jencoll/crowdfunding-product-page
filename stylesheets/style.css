@@ -420,9 +420,6 @@ header .burger {
   justify-content: space-between;
   padding-bottom: 1rem;
 }
-.about .inner-container .products .card-wrap .headings .inactive-pledge {
-  color: #7a7a7a;
-}
 .about .inner-container .products .card-wrap .counts-wrap {
   display: flex;
   justify-content: space-between;
@@ -452,11 +449,15 @@ header .burger {
 .about .inner-container .products .card-wrap .counts-wrap .reward-btn:hover {
   background: #147b74;
 }
-.about .inner-container .products .card-wrap .no-stock p span {
+.about .inner-container .products .card-wrap .no-stock .headings h4 {
+  color: #7a7a7a;
+}
+.about .inner-container .products .card-wrap .no-stock .counts-wrap p span {
   color: gray;
 }
-.about .inner-container .products .card-wrap .no-stock .out-of-stock {
+.about .inner-container .products .card-wrap .no-stock .counts-wrap a {
   background: gray;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -472,6 +473,9 @@ header .burger {
   }
   .about .inner-container {
     padding: 0;
+  }
+  .about .inner-container .inner-container h3, .about .inner-container .inner-container p {
+    padding: 0 0.5rem 1.5rem 0;
   }
   .about .inner-container .products .card-wrap {
     padding: 1rem;
@@ -574,6 +578,7 @@ header .burger {
 }
 .active-backproj-modal .products .card-wrap .card .headings .titles {
   display: flex;
+  align-items: baseline;
 }
 .active-backproj-modal .products .card-wrap .card .headings .titles h5 {
   margin-left: 1rem;
@@ -587,20 +592,21 @@ header .burger {
 }
 .active-backproj-modal .products .card-wrap .card .zero-stock {
   opacity: 0.4;
+  pointer-events: none;
 }
 .active-backproj-modal .products .card-wrap .card p {
   padding: 1rem 0 0 50px;
 }
-.active-backproj-modal .products .card-wrap .card .nb-left {
+.active-backproj-modal .products .card-wrap .card .pledge-left {
   position: absolute;
-  top: 1.8rem;
+  top: 0.2rem;
   right: 1.5rem;
-  font-size: 1.5rem;
 }
-.active-backproj-modal .products .card-wrap .card .nb-left span {
-  color: gray;
-  font-size: 1rem;
-  margin-left: 0.5rem;
+.active-backproj-modal .products .card-wrap .card .pledge-left .nb-left {
+  font-weight: 700;
+  color: black;
+  font-size: 28px;
+  margin-right: 0.3rem;
 }
 .active-backproj-modal .products .card-wrap .buy-pledge {
   display: none;
@@ -670,7 +676,7 @@ header .burger {
   .backproject-modal .products .card-wrap .card p {
     padding: 1rem 0;
   }
-  .backproject-modal .products .card-wrap .card .nb-left {
+  .backproject-modal .products .card-wrap .card .pledge-left {
     position: relative;
     display: block;
     padding: 1rem 0;
@@ -678,6 +684,11 @@ header .burger {
     left: 0;
   }
 }
+.active-backproj-modal {
+  width: 95%;
+  padding: 0 1rem;
+}
+
 @media screen and (max-width: 600px) {
   .backproject-modal .backproject-header {
     padding: 2rem 1.5rem;
@@ -788,4 +799,21 @@ header .burger {
     text-align: center;
     font-size: 22px;
   }
+}
+.amount-alert-modal {
+  display: none;
+}
+
+.amount-alert-modal-active {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 550px;
+  padding: 3rem;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */

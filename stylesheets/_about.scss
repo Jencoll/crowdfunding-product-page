@@ -18,10 +18,6 @@
                     display: flex;
                     justify-content: space-between;
                     padding-bottom: 1rem;
-
-                    .inactive-pledge {
-                        color: $darkgray;
-                    }
                 }
 
                 .counts-wrap {
@@ -47,12 +43,17 @@
                 }
 
                 .no-stock {
-                    p span {
+                    .headings h4 {
+                        color: $darkgray;
+                    }
+
+                    .counts-wrap p span {
                         color: gray;
                     }
 
-                    .out-of-stock {
+                    .counts-wrap a {
                         background: gray;
+                        pointer-events: none;
                     }
                 }
             }
@@ -73,6 +74,10 @@
         padding: 2rem 1rem;
         .inner-container {
             padding: 0;
+
+            .inner-container h3, .inner-container p {
+                padding: 0 0.5rem 1.5rem 0;
+            }
 
             .products {
                 .card-wrap {

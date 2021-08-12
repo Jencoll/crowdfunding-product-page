@@ -16,6 +16,12 @@ const continueBtns = Array.from(document.querySelectorAll('.continue'));
 const thanksModal = document.querySelector('.thanks-modal');
 const gotItBtns = document.querySelectorAll('.got-it');
 const amountInputs = document.querySelectorAll('.amount-input');
+let bambooNbLeft = 1;
+let blackEditionNbLeft = 64;
+let mahoganyNbLeft = 0;
+
+
+setValues();
 
 // burger and menu animation
 btnBurger.addEventListener('click', () => {
@@ -63,12 +69,39 @@ btnCloseModal.addEventListener('click', () => {
 
 // faire une fonction plus générale qui fait toutes les modifs quand le pledge atteint 0
 // document.getElementById('opt4').disabled = true;
+function setValues () {
+    document.querySelectorAll('.nb-left[data-attr="pledge-bamboo"]').forEach(x => {
+        x.innerHTML = bambooNbLeft;
+    });
 
+    document.querySelectorAll('.nb-left[data-attr="pledge-black"]').forEach(x => {
+        x.innerHTML = blackEditionNbLeft;
+    });
 
-// modifier le montant d'un pledge
+    document.querySelectorAll('.nb-left[data-attr="pledge-mahogany"]').forEach(x => {
+        x.innerHTML = mahoganyNbLeft;
+    });
 
+     if(bambooNbLeft === 0) {
+        document.querySelector('.card[data-attr="pledge-bamboo"]').classList.add('no-stock');
+        document.querySelector('.reward-btn[data-attr="pledge-bamboo"]').innerText = "Out of stock";
+        document.querySelector('.card-wrap[data-attr="pledge-bamboo"] .card .headings').classList.add('zero-stock');
+    }
 
+     if(blackEditionNbLeft === 0) {
+        document.querySelector('.card[data-attr="pledge-black"]').classList.add('no-stock');
+        document.querySelector('.reward-btn[data-attr="pledge-black"]').innerText = "Out of stock";
+        document.querySelector('.card-wrap[data-attr="pledge-black"] .card .headings').classList.add('zero-stock');
+    }
 
+    if(mahoganyNbLeft === 0) {
+        document.querySelector('.card[data-attr="pledge-mahogany"]').classList.add('no-stock');
+        document.querySelector('.reward-btn[data-attr="pledge-mahogany"]').innerText = "Out of stock";
+        document.querySelector('.card-wrap[data-attr="pledge-mahogany"] .card .headings').classList.add('zero-stock');
+    }
+}
+
+// reste back project modals désactiver et griser les pledges à 0
 
 // on input click .buy-pledge-active is activated
 inputs.forEach(input => {
@@ -114,16 +147,28 @@ continueBtns.forEach(continueBtn => {
             if(valueAmount > maxAmount){
                 amountInput.parentElement.style.borderColor = "red";
                 amountInput.value = maxAmount;
+                // div message alerte à afficher
+
             } else if(valueAmount < minAmount) {
                 amountInput.parentElement.style.borderColor = "red";
                 amountInput.value = minAmount;
+                // div message alerte à afficher
             } else {
                 valid = true;
                 backProjectModal.classList.remove('active-backproj-modal');
                 thanksModal.classList.add('thanks-modal-active');
+
+                switch(continueBtnIndex) {
+                    case 1: bambooNbLeft--;
+                    break;
+                    case 2: blackEditionNbLeft--;
+                    break;
+                    case 3: mahoganyNbLeft--;
+                    break;
+                }
+                setValues();
             }
         }
-
     })
 })
 

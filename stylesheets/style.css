@@ -40,12 +40,12 @@ h3 {
 }
 
 h4 {
-  font-size: 19px;
+  font-size: 18px;
 }
 
 h5 {
   color: #3cb4ac;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 p {
@@ -548,10 +548,11 @@ header .burger {
   margin-bottom: 1rem;
   padding: 2rem 1.5rem;
   border-radius: 10px;
+  padding: 1rem;
 }
 .active-backproj-modal .products .card-wrap .card {
   position: relative;
-  padding: 2rem 1.5rem;
+  padding: 1rem;
 }
 .active-backproj-modal .products .card-wrap .card .headings {
   display: flex;
@@ -599,7 +600,7 @@ header .burger {
 }
 .active-backproj-modal .products .card-wrap .card .pledge-left {
   position: absolute;
-  top: 0.2rem;
+  top: -1rem;
   right: 1.5rem;
 }
 .active-backproj-modal .products .card-wrap .card .pledge-left .nb-left {
@@ -812,8 +813,35 @@ header .burger {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: #3cb4ac;
   width: 550px;
   padding: 3rem;
   border-radius: 10px;
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+.amount-alert-modal-active p {
+  color: lightcyan;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.amount-alert-modal-active .btn {
+  width: 200px;
+  height: 56px;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: #3cb4ac;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: lightcyan;
+  color: #3cb4ac;
+  margin-top: 1.5rem;
+}
+.amount-alert-modal-active .btn:hover {
+  background-color: white;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

@@ -16,7 +16,9 @@ const continueBtns = Array.from(document.querySelectorAll('.continue'));
 const thanksModal = document.querySelector('.thanks-modal');
 const gotItBtns = document.querySelectorAll('.got-it');
 const amountInputs = document.querySelectorAll('.amount-input');
-let bambooNbLeft = 1;
+const amountAlertModal = document.querySelector('.amount-alert-modal');
+const goBackBtn = document.querySelector('.go-back');
+let bambooNbLeft = 101;
 let blackEditionNbLeft = 64;
 let mahoganyNbLeft = 0;
 
@@ -101,8 +103,6 @@ function setValues () {
     }
 }
 
-// reste back project modals désactiver et griser les pledges à 0
-
 // on input click .buy-pledge-active is activated
 inputs.forEach(input => {
     input.addEventListener('click', (e) => {
@@ -148,11 +148,14 @@ continueBtns.forEach(continueBtn => {
                 amountInput.parentElement.style.borderColor = "red";
                 amountInput.value = maxAmount;
                 // div message alerte à afficher
-
+                amountAlertModal.classList.add('amount-alert-modal-active');
+                overlay.style.zIndex = 100;
             } else if(valueAmount < minAmount) {
                 amountInput.parentElement.style.borderColor = "red";
                 amountInput.value = minAmount;
                 // div message alerte à afficher
+                amountAlertModal.classList.add('amount-alert-modal-active');
+                overlay.style.zIndex = 100;
             } else {
                 valid = true;
                 backProjectModal.classList.remove('active-backproj-modal');
@@ -168,6 +171,9 @@ continueBtns.forEach(continueBtn => {
                 }
                 setValues();
             }
+        } else if(continueBtnIndex === 0) {
+            backProjectModal.classList.remove('active-backproj-modal');
+            thanksModal.classList.add('thanks-modal-active');
         }
     })
 })
@@ -177,4 +183,9 @@ gotItBtns.forEach(gotItBtn => {
         thanksModal.classList.remove('thanks-modal-active');
         overlay.classList.remove('active-overlay');
     })
+})
+
+goBackBtn.addEventListener('click', () => {
+    overlay.style.zIndex = 0;
+    amountAlertModal.classList.remove('amount-alert-modal-active');
 })

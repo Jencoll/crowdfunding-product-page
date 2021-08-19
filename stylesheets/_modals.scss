@@ -363,3 +363,11 @@
         font-weight: bold;
     }
 }
+
+// mobile version
+@media screen and (max-width: 400px) {
+    .amount-alert-modal-active {
+        width: 340px;
+        text-align: center;
+    }
+}

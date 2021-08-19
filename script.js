@@ -18,10 +18,18 @@ const gotItBtns = document.querySelectorAll('.got-it');
 const amountInputs = document.querySelectorAll('.amount-input');
 const amountAlertModal = document.querySelector('.amount-alert-modal');
 const goBackBtn = document.querySelector('.go-back');
+const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+});
+const thousandsFormatter = new Intl.NumberFormat('en-US');
 let bambooNbLeft = 101;
 let blackEditionNbLeft = 64;
 let mahoganyNbLeft = 0;
-
+let amountReached = 89914;
+let backers = 5007;
+let daysLeft = 56;
 
 setValues();
 
@@ -69,8 +77,7 @@ btnCloseModal.addEventListener('click', () => {
     backProjectModal.classList.remove('active-backproj-modal');
 })
 
-// faire une fonction plus générale qui fait toutes les modifs quand le pledge atteint 0
-// document.getElementById('opt4').disabled = true;
+//function to set values in the pledges and deactivate any pledge that reaches 0 pledge available
 function setValues () {
     document.querySelectorAll('.nb-left[data-attr="pledge-bamboo"]').forEach(x => {
         x.innerHTML = bambooNbLeft;
@@ -101,7 +108,23 @@ function setValues () {
         document.querySelector('.reward-btn[data-attr="pledge-mahogany"]').innerText = "Out of stock";
         document.querySelector('.card-wrap[data-attr="pledge-mahogany"] .card .headings').classList.add('zero-stock');
     }
+
+    let amountElement = document.querySelector('#amount');
+    amountElement.innerHTML = formatter.format(amountReached);
+    let backersElement = document.querySelector('#backers');
+    backersElement.innerHTML = thousandsFormatter.format(backers);
 }
+
+function dateDecrease() {
+    let daysLeftElement = document.querySelector('#daysLeft');
+    const oneDay = 24 * 60 * 60 * 1000;
+    let currentDate = Date.now();
+    let endDate = Date.now() + (56 * oneDay);
+    daysLeft = (endDate - currentDate) / oneDay;
+    daysLeftElement.innerHTML = Math.floor(daysLeft);
+}
+
+dateDecrease();
 
 // on input click .buy-pledge-active is activated
 inputs.forEach(input => {
@@ -169,11 +192,15 @@ continueBtns.forEach(continueBtn => {
                     case 3: mahoganyNbLeft--;
                     break;
                 }
+                amountReached += valueAmount;
+                backers++;
                 setValues();
             }
         } else if(continueBtnIndex === 0) {
             backProjectModal.classList.remove('active-backproj-modal');
             thanksModal.classList.add('thanks-modal-active');
+            backers++;
+            setValues();
         }
     })
 })
